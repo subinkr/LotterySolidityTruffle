@@ -18,6 +18,10 @@ contract CommitRevealLottery {
     revealCloses = commitCloses + DURATION;
   }
 
+  function getBalance() public view returns(uint256) {
+    return address(this).balance;
+  }
+
   function enter(bytes32 commitment) public payable {
     require(msg.value >= 0.01 ether, "msg.value should be greater than or equal to 0.01 ether");
     require(block.number < commitCloses, "commit duration is over");
