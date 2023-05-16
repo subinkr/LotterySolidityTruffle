@@ -148,9 +148,9 @@ contract("Lottery", accounts => {
       assert.equal(winner, accounts[Number(calculatedWinnerIndex) + 1]);
     });
 
-    it.skip("Calculate winner - getRandomNumberV2", async () => {
+    it("Calculate winner - getRandomNumberV2", async () => {
       const lotteryId = await lottery.lotteryId();
-      const winner = await lottery.lotteryHistory(lotteryId - 1);
+      const winner = await lottery.lotteryHistory(0);
       console.log(`winner: ${winner}`);
 
       const blockNumber = await web3.eth.getBlockNumber();
@@ -171,7 +171,7 @@ contract("Lottery", accounts => {
       assert.equal(winner, accounts[Number(calculatedWinnerIndex) + 1]);
     });
 
-    it("Calculate winner - getRandomNumberV3", async () => {
+    it.skip("Calculate winner - getRandomNumberV3", async () => {
       const lotteryId = await lottery.lotteryId();
       const winner = await lottery.lotteryHistory(0);
       console.log(`winner: ${winner}`);

@@ -47,7 +47,7 @@ contract Lottery {
 
 
     function pickWinner() public onlyOwner {
-        uint256 index = getRandomNumberV3() % players.length;
+        uint256 index = getRandomNumberV2() % players.length;
 
         // address payable -> address 저장 가능, 반대는 불가능
         lotteryHistory[lotteryId] = players[index];
